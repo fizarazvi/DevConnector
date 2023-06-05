@@ -11,6 +11,8 @@ import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import { loadUser } from './actions/auth';
@@ -69,6 +71,16 @@ const App = () => {
                 exact
                 path='/add-education'
                 element={<PrivateRoute component={AddEducation} />}
+              />
+              <Route
+                exact
+                path='/posts'
+                element={<PrivateRoute component={Posts} />}
+              />
+              <Route
+                exact
+                path='/posts/:id'
+                element={<PrivateRoute component={Post} />}
               />
             </Routes>
           </section>
